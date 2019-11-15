@@ -1,0 +1,1 @@
+var __isIphone__ = false;
