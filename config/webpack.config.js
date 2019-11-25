@@ -46,6 +46,20 @@ const config = {
         use: 'vue-loader'
       },
       {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name].[ext]',
+              publicPath: 'static',
+              outputPath: 'static',
+              limit: 10000
+            }
+          }
+        ]
+      },
+      {
         // 配置的是用来解析.css文件的loader，css-loader、style-loader
         // loader的顺序 默认是从右往左，从上到下
         // css-loader 解析 @import 这种语法的
